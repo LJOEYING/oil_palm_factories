@@ -153,7 +153,7 @@ class AccActivationPageState extends State<AccActivationPage> {
                                         ),
                                         const Text(
                                             "I agree to the terms & conditions",
-                                            style: TextStyle(fontSize: 20.0)),
+                                            style: TextStyle(fontSize: 17.0)),
                                       ],
                                     ),
                                     const SizedBox(height: 10),

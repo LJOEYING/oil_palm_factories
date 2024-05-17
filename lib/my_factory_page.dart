@@ -121,55 +121,61 @@ class _MyFactoryPageState extends State<MyFactoryPage> {
                                     ),
                                   )
                         : currentIndex == 0
-                            ? Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  currentFactoryNumber == 1
-                                      ? EngineerList(
-                                          engineers: engineers,
-                                          engineerPhoneNo: engineerPhoneNo)
-                                      : currentFactoryNumber == 2
-                                          ? const Column()
-                                          : const Column(),
-                                  Align(
-                                    alignment: Alignment.bottomRight,
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(35.0),
-                                      child: IconButton(
-                                        onPressed: () {
-                                          Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const Invitation(),
+                            ? SingleChildScrollView(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      currentFactoryNumber == 1
+                                          ? EngineerList(
+                                              engineers: engineers,
+                                              engineerPhoneNo: engineerPhoneNo)
+                                          : currentFactoryNumber == 2
+                                              ? const Column()
+                                              : const Column(),
+                                      Align(
+                                        alignment: Alignment.bottomRight,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(35.0),
+                                          child: IconButton(
+                                            onPressed: () {
+                                              Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const Invitation(),
+                                                ),
+                                              );
+                                            },
+                                            style: ButtonStyle(
+                                              backgroundColor:
+                                                  MaterialStatePropertyAll(
+                                                      Colors.purple.shade100),
+                                              shape: MaterialStatePropertyAll(
+                                                RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                ),
+                                              ),
+                                              elevation:
+                                                  const MaterialStatePropertyAll(
+                                                      8),
+                                              shadowColor:
+                                                  const MaterialStatePropertyAll(
+                                                      Colors.grey),
                                             ),
-                                          );
-                                        },
-                                        style: ButtonStyle(
-                                          backgroundColor:
-                                              MaterialStatePropertyAll(
-                                                  Colors.purple.shade100),
-                                          shape: MaterialStatePropertyAll(
-                                            RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
+                                            icon: const Icon(
+                                              Icons.add,
+                                              size: 45,
                                             ),
                                           ),
-                                          elevation:
-                                              const MaterialStatePropertyAll(8),
-                                          shadowColor:
-                                              const MaterialStatePropertyAll(
-                                                  Colors.grey),
-                                        ),
-                                        icon: const Icon(
-                                          Icons.add,
-                                          size: 50,
                                         ),
                                       ),
-                                    ),
+                                    ],
                                   ),
-                                ],
+                                ),
                               )
                             : Padding(
                                 padding:
@@ -196,7 +202,10 @@ class _MyFactoryPageState extends State<MyFactoryPage> {
                                           ),
                                         ),
                                         SizedBox(
-                                          width: 70,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.15,
                                           child: IconButton(
                                             style: ButtonStyle(
                                               backgroundColor:
@@ -285,7 +294,7 @@ class _MyFactoryPageState extends State<MyFactoryPage> {
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 10),
         width: MediaQuery.of(context).size.width * 0.45,
-        height: MediaQuery.of(context).size.height * 0.15,
+        // height: MediaQuery.of(context).size.height * 0.15,
         decoration: BoxDecoration(
           boxShadow: factory == factoryNumber
               ? [
@@ -311,7 +320,7 @@ class _MyFactoryPageState extends State<MyFactoryPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Padding(
-              padding: EdgeInsets.all(18.0),
+              padding: EdgeInsets.all(20.0),
               child: Icon(
                 Icons.factory,
                 size: 35,
@@ -430,54 +439,56 @@ class EditData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0),
-      child: Column(
-        children: [
-          Text(
-            editDataTitle,
-            textAlign: TextAlign.center,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-          ),
-          Container(
-            width: double.infinity,
-            decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.black,
-                  width: 2,
-                ),
-                borderRadius: BorderRadius.circular(15)),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25),
-                  child: Text(
-                    editData,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 25),
-                  ),
-                ),
-                Container(
-                  height: 56,
-                  width: 2,
-                  color: Colors.black,
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-                  child: Text(
-                    editDataUnit,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 22),
-                  ),
-                )
-              ],
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 25.0),
+        child: Column(
+          children: [
+            Text(
+              editDataTitle,
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
             ),
-          ),
-        ],
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.black,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.circular(15)),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 8.0, horizontal: 16),
+                    child: Text(
+                      editData,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 25),
+                    ),
+                  ),
+                  Container(
+                    height: 56,
+                    width: 2,
+                    color: Colors.black,
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                    child: Text(
+                      editDataUnit,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -512,8 +523,9 @@ class _FactoryContextState extends State<FactoryContext> {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 5),
           child: Text(
+            textAlign: TextAlign.center,
             widget.contextTitle,
-            style: const TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
           ),
         ),
         Expanded(
