@@ -62,6 +62,7 @@ class InvitationState extends State<Invitation> {
                 ),
               ),
               const TextField(
+                key: Key("ownerName"),
                 decoration: InputDecoration(
                   filled: true,
                   border: OutlineInputBorder(),
@@ -82,6 +83,7 @@ class InvitationState extends State<Invitation> {
               ),
               //need to onchanged
               TextField(
+                key: const Key("phoneNo"),
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,

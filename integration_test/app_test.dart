@@ -11,7 +11,6 @@ void main() {
       await tester.pumpAndSettle();
 
       final phoneNumberFormField = find.byType(TextField);
-
       final getActivationCodeButton = find.byType(ElevatedButton);
       final checkTermsAndConditions = find.byType(Checkbox);
 
@@ -36,18 +35,14 @@ void main() {
       await tester.pumpAndSettle();
 
       final factoryButton1 = find.text("Factory 1").first;
-
       await tester.tap(factoryButton1);
       await tester.pumpAndSettle();
 
       final factoryButton2 = find.text("Factory 2").first;
-      expect(factoryButton2, findsOneWidget);
-
       await tester.tap(factoryButton2);
       await tester.pumpAndSettle();
 
       final engineerList = find.byIcon(Icons.person);
-
       await tester.tap(engineerList);
       await tester.pumpAndSettle();
 
@@ -58,11 +53,11 @@ void main() {
       await tester.tap(add);
       await tester.pumpAndSettle();
 
-      final ownerName = find.byType(TextField).first;
+      final ownerName = find.byKey(const Key("ownerName"));
       await tester.enterText(ownerName, "Joeying");
       await tester.pumpAndSettle();
 
-      final ownerPhone = find.byType(TextField).last;
+      final ownerPhone = find.byKey(const Key("phoneNo"));
       await tester.enterText(ownerPhone, "1114411863");
       await tester.pumpAndSettle();
 
