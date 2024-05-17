@@ -19,32 +19,9 @@ void main() {
       await tester.pumpAndSettle();
 
       await tester.testTextInput.receiveAction(TextInputAction.done);
-      // expect(
-      //   tester.getSemantics(checkTermsAndConditions),
-      //   matchesSemantics(
-      //     hasTapAction: true,
-      //     hasCheckedState: true,
-      //     isChecked: false,
-      //     hasEnabledState: false,
-      //     isEnabled: true,
-      //     isFocusable: true,
-      //   ),
-      // );
 
       await tester.tap(checkTermsAndConditions);
       await tester.pumpAndSettle();
-
-      // expect(
-      //   tester.getSemantics(checkTermsAndConditions),
-      //   matchesSemantics(
-      //     hasTapAction: true,
-      //     hasCheckedState: true,
-      //     isChecked: true,
-      //     hasEnabledState: false,
-      //     isEnabled: true,
-      //     isFocusable: true,
-      //   ),
-      // );
 
       await tester.tap(getActivationCodeButton);
       await tester.pumpAndSettle();
@@ -68,10 +45,6 @@ void main() {
 
       await tester.tap(factoryButton2);
       await tester.pumpAndSettle();
-
-      // final horizontalScrollView = find.byType(SingleChildScrollView);
-
-      // await tester.drag(horizontalScrollView, Offset(50, 0));
 
       final engineerList = find.byIcon(Icons.person);
 
