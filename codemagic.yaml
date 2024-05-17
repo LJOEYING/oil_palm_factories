@@ -14,7 +14,7 @@ workflows:
     script:
       - name: Get Flutter packages
         script: |
-         flutter packages pub get
+          flutter packages pub get
       - name: Build APK with Flutter
         script: |
           flutter build apk --debug
@@ -27,9 +27,9 @@ workflows:
       - name: Run Firebase Test Lab Tests
         script: |
           set -ex
-          echo $GCLOUD_KEY_FILE | base64  --decode > ./gcloud_key_file.json
+          echo $GCLOUD_KEY_FILE | base64 --decode > ./gcloud_key_file.json
           gcloud auth activate-service-account --key-file=gcloud_key_file.json
-          gcloud --quiet config set project Firebase $FIREBASE_PROJECT
+          gcloud --quiet config set project $FIREBASE_PROJECT
 
           gcloud firebase test android run \
             --type instrumentation \
@@ -41,6 +41,3 @@ workflows:
       - build/**/outputs/**/*.aab
       - build/**/outputs/**/mapping.txt
       - flutter_drive.log
-
-
-          
