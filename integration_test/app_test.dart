@@ -18,6 +18,7 @@ void main() {
       await tester.pumpAndSettle();
 
       await tester.testTextInput.receiveAction(TextInputAction.done);
+      await tester.pumpAndSettle();
 
       await tester.tap(checkTermsAndConditions);
       await tester.pumpAndSettle();
@@ -62,9 +63,13 @@ void main() {
       await tester.pumpAndSettle();
 
       await tester.testTextInput.receiveAction(TextInputAction.done);
+      await tester.pumpAndSettle();
 
       final submitButton = find.byType(ElevatedButton);
       await tester.tap(submitButton);
+      await tester.pumpAndSettle();
+
+      await tester.tap(factoryButton2);
       await tester.pumpAndSettle();
 
       final editList = find.byIcon(Icons.settings).last;
