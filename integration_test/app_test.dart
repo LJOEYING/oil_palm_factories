@@ -35,52 +35,52 @@ void main() {
       await tester.tap(activateButton);
       await tester.pumpAndSettle();
 
-      // final factoryButton1 = find.text("Factory 1").first;
-      // await tester.tap(factoryButton1);
-      // await tester.pumpAndSettle();
+      final factoryButton1 = find.text("Factory 1").first;
+      await tester.tap(factoryButton1);
+      await tester.pumpAndSettle();
 
-      // final factoryButton2 = find.text("Factory 2").first;
-      // await tester.tap(factoryButton2);
-      // await tester.pumpAndSettle();
+      final factoryButton2 = find.text("Factory 2").first;
+      await tester.tap(factoryButton2);
+      await tester.pumpAndSettle();
 
-      // final engineerList = find.byIcon(Icons.person);
-      // await tester.tap(engineerList);
-      // await tester.pumpAndSettle();
+      final engineerList = find.byIcon(Icons.person);
+      await tester.tap(engineerList);
+      await tester.pumpAndSettle();
 
-      // await tester.tap(factoryButton1);
-      // await tester.pumpAndSettle();
+      await tester.tap(factoryButton1);
+      await tester.pumpAndSettle();
 
-      // final add = find.byIcon(Icons.add);
-      // await tester.tap(add);
-      // await tester.pumpAndSettle();
+      final add = find.byIcon(Icons.add);
+      await tester.tap(add);
+      await tester.pumpAndSettle();
 
-      // final ownerName = find.byKey(const Key("ownerName"));
-      // await tester.enterText(ownerName, "Joeying");
-      // await tester.pumpAndSettle();
+      final ownerName = find.byKey(const Key("ownerName"));
+      await tester.enterText(ownerName, "Joeying");
+      await tester.pumpAndSettle();
 
-      // final ownerPhone = find.byKey(const Key("phoneNo"));
-      // await tester.enterText(ownerPhone, "1114411863");
-      // await tester.pumpAndSettle();
+      final ownerPhone = find.byKey(const Key("phoneNo"));
+      await tester.enterText(ownerPhone, "1114411863");
+      await tester.pumpAndSettle();
 
-      // await tester.testTextInput.receiveAction(TextInputAction.done);
-      // await tester.pumpAndSettle();
+      await tester.testTextInput.receiveAction(TextInputAction.done);
+      await tester.pumpAndSettle();
 
-      // final submitButton = find.byType(ElevatedButton);
-      // await tester.tap(submitButton);
-      // await tester.pumpAndSettle();
+      final submitButton = find.byType(ElevatedButton);
+      await tester.tap(submitButton);
+      await tester.pumpAndSettle();
 
-      // await tester.tap(factoryButton2);
-      // await tester.pumpAndSettle();
+      await tester.tap(factoryButton2);
+      await tester.pumpAndSettle();
 
-      // final editList = find.byIcon(Icons.settings).last;
-      // await tester.tap(editList);
-      // await tester.pumpAndSettle();
+      final editList = find.byIcon(Icons.settings).last;
+      await tester.tap(editList);
+      await tester.pumpAndSettle();
 
-      // await tester.tap(factoryButton1);
-      // await tester.pumpAndSettle();
+      await tester.tap(factoryButton1);
+      await tester.pumpAndSettle();
 
-      // await tester.tap(factoryButton2);
-      // await tester.pumpAndSettle();
+      await tester.tap(factoryButton2);
+      await tester.pumpAndSettle();
     });
   });
 }
