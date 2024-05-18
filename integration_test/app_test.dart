@@ -35,19 +35,16 @@ void main() {
       await tester.tap(activateButton);
       await tester.pumpAndSettle();
 
-      final factoryButton1 = find.text("Factory 1").first;
-      await tester.tap(factoryButton1);
-      await tester.pumpAndSettle();
-
       final factoryButton2 = find.text("Factory 2").first;
       await tester.tap(factoryButton2);
       await tester.pumpAndSettle();
 
-      final engineerList = find.byIcon(Icons.person);
-      await tester.tap(engineerList);
+      final factoryButton1 = find.text("Factory 1").first;
+      await tester.tap(factoryButton1);
       await tester.pumpAndSettle();
 
-      await tester.tap(factoryButton1);
+      final engineerList = find.byIcon(Icons.person);
+      await tester.tap(engineerList);
       await tester.pumpAndSettle();
 
       final add = find.byIcon(Icons.add);
@@ -72,14 +69,17 @@ void main() {
       await tester.tap(factoryButton2);
       await tester.pumpAndSettle();
 
+      await tester.tap(factoryButton1);
+      await tester.pumpAndSettle();
+
       final editList = find.byIcon(Icons.settings).last;
       await tester.tap(editList);
       await tester.pumpAndSettle();
 
-      await tester.tap(factoryButton1);
+      await tester.tap(factoryButton2);
       await tester.pumpAndSettle();
 
-      await tester.tap(factoryButton2);
+      await tester.tap(factoryButton1);
       await tester.pumpAndSettle();
     });
   });
