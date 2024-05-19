@@ -57,9 +57,6 @@ class AccActivationPageState extends State<AccActivationPage> {
                   ),
                 ],
               ),
-              // const SizedBox(
-              //   height: 20,
-              // ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -68,7 +65,6 @@ class AccActivationPageState extends State<AccActivationPage> {
                     style: TextStyle(fontWeight: FontWeight.w900, fontSize: 50),
                   ),
                   Container(
-                    // width: MediaQuery.of(context).size.width * 0.90,
                     height: MediaQuery.of(context).size.height * 0.45,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -130,7 +126,6 @@ class AccActivationPageState extends State<AccActivationPage> {
                                     ),
                                   ],
                                 ),
-
                                 Column(
                                   children: [
                                     Row(
@@ -176,21 +171,6 @@ class AccActivationPageState extends State<AccActivationPage> {
                                     ),
                                   ],
                                 ),
-                                // CheckboxListTile(
-                                //   title: const Text(
-                                //       "I agree to the terms & conditions"),
-                                //   checkColor: Colors.black,
-                                //   fillColor:
-                                //       const MaterialStatePropertyAll(Colors.blue),
-                                //   value: checkboxListTile,
-                                //   onChanged: (val) {
-                                //     setState(() {
-                                //       checkboxListTile = val;
-                                //     });
-                                //   },
-                                //   controlAffinity:
-                                //       ListTileControlAffinity.leading,
-                                // ),
                               ],
                             )
                           : const Otp(),
@@ -198,9 +178,6 @@ class AccActivationPageState extends State<AccActivationPage> {
                   ),
                 ],
               ),
-              // const SizedBox(
-              //   height: 40.0,
-              // ),
               Column(
                 children: [
                   Center(
