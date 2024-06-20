@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oil_palm_factories/my_factory_page.dart';
+import 'package:oil_palm_factories/pages/myFactoryPage/my_factory_page.dart';
 
 class Otp extends StatefulWidget {
   const Otp({super.key});
